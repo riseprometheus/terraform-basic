@@ -1,0 +1,24 @@
+Hello!
+
+My Name is Prometheus and this is meant to be a simple tutorial on using
+terraform to create a new EC2 instance that you can connect to via SSH and
+an AWS key-pair.
+
+Before we get started, here are some prerequisites that we need to go over. I
+am doing this on windows, but ideally these directions should be platform
+agnostic.
+
+~prerequisites
+1.) This requires an AWS account. AWS offers a free tier with compute
+recourses like EC2 instances that will be available for your first year. Just
+remember I am not responsible for any costs you may incur after that first year
+or if AWS decided to remove the free tier!
+
+2.) You will need the AWS CLI which can be found at https://aws.amazon.com/cli/.
+Once you have this downloaded, you will need to configure your AWS account for
+use with the CLI. More information on that can be found at
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+
+This guide is still a work in progress so please that in mind if you stumble
+upon this github repo before it is ready.
