@@ -20,5 +20,7 @@ use with the CLI. More information on that can be found at
 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
 
+To do: Still need to add the VPC, Sub-net, and Network Gateway code.
+
 This guide is still a work in progress so please that in mind if you stumble
 upon this github repo before it is ready.
