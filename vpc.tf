@@ -42,18 +42,27 @@ resource "aws_route_table" "server_route_table" {
   }
 }
 
-resource "aws_route_table_association" "subnet_route_association"{
-    subnet_id = aws_subnet.server_public_subnet.id
-    route_table_id = aws_route_table.server_route_table.id
+resource "aws_route_table_association" "subnet_route_association" {
+  subnet_id      = aws_subnet.server_public_subnet.id
+  route_table_id = aws_route_table.server_route_table.id
 }
 
 resource "aws_security_group" "ssh-permissions" {
+  name = "minecraft-ssh-permissions"
   vpc_id = aws_vpc.server_vpc.id
 
   ingress {
     from_port = 22
-    to_port = 22
-    protocol = "tcp"
+    to_port   = 22
+    protocol  = "tcp"
+    // update this to dynamically get your local ip address
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port = 25565
+    to_port   = 25565
+    protocol  = "tcp"
     // update this to dynamically get your local ip address
     cidr_blocks = ["0.0.0.0/0"]
   }

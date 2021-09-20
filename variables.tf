@@ -37,5 +37,5 @@ variable "route_table_name" {
 variable "security_group_name" {
   description = "Value of the name tag for the security group"
   type        = string
-  default     = "ssh_security_group"
+  default     = "minecraft-ssh-permissions"
 }
