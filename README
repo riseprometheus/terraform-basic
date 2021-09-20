@@ -1,14 +1,14 @@
 Hello!
 
 My Name is Prometheus and this is meant to be a simple tutorial on using
-terraform to create a new EC2 instance that you can connect to via SSH and
+terraform to create a minecraft server on a new EC2 instance that you can connect to via SSH and
 an AWS key-pair.
 
 Before we get started, here are some prerequisites that we need to go over. I
 am doing this on windows, but ideally these directions should be platform
 agnostic.
 
-~prerequisites
+~Prerequisites
 1.) This requires an AWS account. AWS offers a free tier with compute
 recourses like EC2 instances that will be available for your first year. Just
 remember I am not responsible for any costs you may incur after that first year
@@ -19,8 +19,61 @@ Once you have this downloaded, you will need to configure your AWS account for
 use with the CLI. More information on that can be found at
 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
+3.) Git is neccessary download this code from github and in general is a good
+resource to familiarize yourself with.
 
-To do: Still need to add the VPC, Sub-net, and Network Gateway code.
+
+~How to run
+1.) Clone this repository from github by running this command in either terminal
+or command prompt:
+
+  git clone https://github.com/riseprometheus/terraform-basic.git
+
+By default this command will download the code into a directory called
+terraform-basic in the directory you are when you run the git command. If you
+want to use create a specific directory, use this command with the brackets
+replaced by your desired path:
+
+  git clone https://github.com/riseprometheus/terraform-basic.git <directory>
+
+2.) Assuming you have already configured your aws credentials, navigate to your
+directory and run:
+
+  terraform init
+
+This command will gather all the modules we need from terraform to be able to
+provision our instance and security resources from AWS.
+
+3.) Once we have initialized terraform, we can validate our terraform configuration
+is valid by running:
+
+  terraform validate
+
+Ideally this step shouldn't yield any problems, but if it does, please reach out
+to me so that I can take a look. If you are particularly adventurous, feel free
+to make a pull request with your changes and I will also be happy to take a look.
+
+4.) Finally, we can start provisioning our resources. Start by running:
+
+  terraform apply
+
+This will begin the provisioning process. Once terraform has validated what it
+can, you will be asked whether you want to apply these changes. Enter yes, and
+your resources will start to come to life on AWS. Additionally, you will notice
+a new file called minecraft.pem. This files contains the key you will need to SSH
+onto you new instance. Treat this file like your would treat any other password.
+If someone gets access to the key, they will have access to your instance, and
+nobody likes having to deal with compromised credentials.
+
+
+~How does this all work?
+This terraform config consists of several different aws resources that are
+neccessary to provision your shiny new ec2 instance AND be able to connect to it.
+The three main files in this repository are:
+
+  a.) main.tf
+  b.) variables.tf
+  c.) vpc.tf
 
 This guide is still a work in progress so please that in mind if you stumble
 upon this github repo before it is ready.
