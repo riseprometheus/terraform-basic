@@ -1,0 +1,13 @@
+---
+  - name: Minecraft Server Setup
+    hosts: conspirator
+    become: yes
+    become_user: root
+    tasks:
+      - name: Create Minecraft Admin
+          user: Minecraft
+          groups:
+            - sudo
+          state: present
+          shell: /bin/bash
+          system: yes
