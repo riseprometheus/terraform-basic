@@ -41,3 +41,7 @@ resource "local_file" "private_key" {
   filename        = "minecraft.pem"
   file_permission = "0600"
 }
+
+output "ip_address" {
+  value = aws_instance.app_server.public_ip
+}

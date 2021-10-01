@@ -19,7 +19,7 @@ Once you have this downloaded, you will need to configure your AWS account for
 use with the CLI. More information on that can be found at
 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
 
-3.) Git is neccessary download this code from github and in general is a good
+3.) Git is necessary download this code from github and in general is a good
 resource to familiarize yourself with.
 
 
@@ -68,7 +68,7 @@ nobody likes having to deal with compromised credentials.
 
 ~How does this all work?
 This terraform config consists of several different aws resources that are
-neccessary to provision your shiny new ec2 instance AND be able to connect to it.
+necessary to provision your shiny new ec2 instance AND be able to connect to it.
 The three main files in this repository are:
 
   a.) main.tf
